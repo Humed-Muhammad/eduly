@@ -26,7 +26,7 @@ import { LoginTypes } from "./types";
 import { loginValidation } from "./validation";
 import Link from "next/link";
 import Image from "next/image";
-import { pb } from "@/utils";
+import { pb, setToLocalStorage } from "@/utils";
 import { useRouter } from "next/router";
 
 export const Login = () => {
@@ -50,7 +50,8 @@ export const Login = () => {
           status: "success",
         });
         setLoading(false);
-        // route.push("/");
+        route.push("/");
+        setToLocalStorage(record.token);
       }
     } catch (error: any) {
       setLoading(false);
