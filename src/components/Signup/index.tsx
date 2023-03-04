@@ -89,7 +89,12 @@ export const Signup = () => {
           h="full"
           width="50%"
         >
-          <Image src={"/signup.jpg"} alt="login pic" width={400} height={350} />
+          <Image
+            src={"/signup.webp"}
+            alt="login pic"
+            width={400}
+            height={350}
+          />
         </Container>
 
         <Formik

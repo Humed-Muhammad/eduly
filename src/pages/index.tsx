@@ -2,11 +2,17 @@ import Head from "next/head";
 import { Inter } from "next/font/google";
 
 import { Login } from "@/components";
-import { Container, Heading } from "@chakra-ui/react";
+import { Button, Center, Container, Heading } from "@chakra-ui/react";
+import { useAuthCheck } from "@/utils/hooks";
+import { clearLocalStorage, pb } from "@/utils";
+import { useRouter } from "next/router";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
+  useAuthCheck();
+  const route = useRouter();
+
   return (
     <>
       <Head>
@@ -17,6 +23,17 @@ export default function Home() {
       </Head>
       <main>
         <Heading>Welcome to your page.</Heading>
+        <Center my="5">
+          <Button
+            onClick={() => {
+              clearLocalStorage();
+              route.push("/login");
+            }}
+            colorScheme="red"
+          >
+            Logout
+          </Button>
+        </Center>
       </main>
     </>
   );

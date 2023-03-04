@@ -43,7 +43,7 @@ export const Login = () => {
       const record = await pb
         .collection("users")
         .authWithPassword(values.username, values.password);
-      console.log(record);
+
       if (record) {
         toast({
           description: "Logged in successfully!.",
@@ -89,7 +89,7 @@ export const Login = () => {
           h="full"
           width="50%"
         >
-          <Image src={"/login.jpg"} alt="login pic" width={400} height={300} />
+          <Image src={"/login.webp"} alt="login pic" width={400} height={300} />
         </Container>
 
         <Formik
