@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev & ./pocketbase/pocketbase serve",
     "build": "next build",
-    "start": "next start",
+    "start": "next start & ./pocketbase/pocketbase serve",
     "lint": "next lint"
   },
   "dependencies": {
