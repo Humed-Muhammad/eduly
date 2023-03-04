@@ -1,7 +1,6 @@
 import { useState } from "react";
 
 import {
-  Box,
   Button,
   Flex,
   FormControl,
@@ -15,8 +14,6 @@ import {
   InputRightElement,
   useToast,
   CircularProgress,
-  Heading,
-  Text,
   Alert,
 } from "@chakra-ui/react";
 import { Unlock } from "react-feather";
@@ -28,6 +25,9 @@ import Link from "next/link";
 import Image from "next/image";
 import { pb, setToLocalStorage } from "@/utils";
 import { useRouter } from "next/router";
+
+import { AuthLogin } from "../AuthLogin";
+import NoSSR from "react-no-ssr";
 
 export const Login = () => {
   const [show, setShow] = useState(false);
@@ -119,6 +119,9 @@ export const Login = () => {
                 mb="6"
               >
                 <Unlock size={37} />
+                <NoSSR>
+                  <AuthLogin signInText="Login" />
+                </NoSSR>
               </Container>
               <VStack spacing={4} align="flex-start">
                 {error && (

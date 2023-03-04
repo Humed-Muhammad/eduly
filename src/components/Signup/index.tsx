@@ -25,6 +25,8 @@ import { signupValidation } from "./validation";
 import Link from "next/link";
 import { pb } from "@/utils";
 import { useRouter } from "next/router";
+import NoSSR from "react-no-ssr";
+import { AuthLogin } from "../AuthLogin";
 export const Signup = () => {
   const [show, setShow] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -126,6 +128,9 @@ export const Signup = () => {
                 mb="6"
               >
                 <Lock size={37} />
+                <NoSSR>
+                  <AuthLogin signInText="SignUp" />
+                </NoSSR>
               </Container>
               <VStack spacing={4} align="flex-start">
                 <FormControl isInvalid={!!errors.username && touched.username}>

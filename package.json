@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev & ./pocketbase/pocketbase serve",
+    "dev": "next dev",
     "build": "next build",
-    "start": "next start & ./pocketbase/pocketbase serve",
+    "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
@@ -24,7 +24,11 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-feather": "^2.0.10",
+    "react-no-ssr": "^1.1.0",
     "typescript": "4.9.5",
     "yup": "^1.0.2"
+  },
+  "devDependencies": {
+    "@types/react-no-ssr": "^1.1.3"
   }
 }
